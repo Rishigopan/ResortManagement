@@ -1,0 +1,53 @@
+.marquee-wrapper {
+    overflow: hidden;
+  }
+  
+  .marquee {
+    display: flex;
+    animation-name: marquee;
+    animation-duration: 30s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-direction: alternate;
+    transform: translateX(0);
+    
+  }
+  @media screen and (max-width:600px){
+    .marquee {
+      display: flex;
+    animation-name: marquee;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-direction: alternate;
+    transform: translateX(0);
+    }
+  }
+  .attractn-owl-curve img {
+      width: 500px;
+      height: 30rem;
+      padding: 1em;
+    
+    }
+    .attractn-owl-curve::before,
+  .attractn-owl-curve::after  {
+    content: '';
+    width: 100%;
+    height: 120px;
+    background-color: white;
+    display: block;
+    position: absolute;
+    z-index: 100;
+    /* border: 1px solid red; */
+    border-radius: 50%;
+    transform: translateY(-50%) scale(105%);
+  }
+  
+  .attractn-owl-curve{
+    /* margin: 500px auto; */
+  }
+  
+  @keyframes marquee {
+    from {transform: translateX(0);}
+    to {transform: translateX(-100%);}
+  }

@@ -1,0 +1,298 @@
+/* ------------------- */
+/* Scroll carousel start */
+
+.attractnCarousel {
+    display: grid;
+    grid-auto-flow: column;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    user-select: none;
+    cursor: pointer;
+    position: relative;
+    transition: .5s cubic-bezier(0.175, 0.885, 0.32, 1.275)
+}
+
+.scrollCarouselNew {
+    position: relative;
+}
+
+.attractnCarousel div {
+    scroll-snap-align: center;
+    height: 53vh;
+    transition: all 1s;
+    transition-delay: 0ms;
+    padding: 0 15px;
+    box-sizing: border-box;
+    width: 25vw;
+}
+@media screen and (max-width:500px){
+    .attractnCarousel div {
+        height: 30vh;
+        padding: 0 5px;
+        width: 36vw;   
+        margin-top: -20px;
+    }
+    .attractnCarousel div img {
+        height: 100%;
+    }
+}
+.attractnCarousel div img {
+    /* object-fit: cover; */
+    /* height: 100%; */
+    width: 100%;
+}
+
+#scrollCarouselNew::after,
+#scrollCarouselNew::before {
+    content: "";
+    display: block;
+    background: rgb(255, 255, 255);
+    /* border: 1px solid red; */
+    width: 101vw;
+    height: 100px;
+    position: absolute;
+    border-radius: 50%;
+    z-index: 1000;
+    /* border: 1px solid red; */
+}
+
+@media screen and (max-width:600px){
+    #scrollCarouselNew::after, #scrollCarouselNew::before {
+        width: 109vw;
+    }
+}
+#scrollCarouselNew::before {
+    transform: translate(-20px, -50%);
+}
+
+#scrollCarouselNew::after {
+    bottom: 0;
+    transform: translate(-20px, 50%);
+}
+
+/* @media only screen and (min-width: 960px) {
+    .attractnCarousel div {
+        width: 240px;
+    }
+
+    #scrollCarouselNew::before,
+    #scrollCarouselNew::after {
+        width: 1000px;
+    }
+
+}
+
+@media only screen and (min-width: 1140px) {
+    .attractnCarousel div {
+        width: 285px;
+    }
+
+    #scrollCarouselNew::before,
+    #scrollCarouselNew::after {
+        width: 1180px;
+    }
+}
+
+@media only screen and (min-width: 1320px) {
+    .attractnCarousel div {
+        width: 330px;
+    }
+
+    #scrollCarouselNew::before,
+    #scrollCarouselNew::after {
+        width: 1360px;
+    }
+}
+ */
+
+
+/* Scroll carousel end */
+/* ------------------- */
+
+/* ------------------- */
+/* Round carousel start */
+.rollerItemGroup {
+    display: flex;
+    position: relative;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+    padding: 0 5%;
+    height: 60vh;
+    max-height: 420px;
+}
+
+.rollerItem {
+    /* width: 20%; */
+    flex-shrink: 0;
+    /* border: 1px solid red; */
+    flex: 1;
+    transition: transform 200ms;
+}
+
+.rollerImageBox {
+    width: 90%;
+    aspect-ratio: 1/1;
+    margin-left: 18px;
+    overflow: hidden;
+    border-radius: 50%;
+    margin-bottom: 0%;
+    /* border: 1px solid gray; */
+}
+@media screen and (max-width:500px){
+    .rollerImageBox {
+        margin-left: 0;
+    }
+}
+.rollerImageBox img {
+    width: 100%;
+}
+
+.rollItem1,
+.rollItem5 {
+    flex: 2;
+    align-self: flex-end;
+}
+
+.rollItem3 {
+    flex: 4;
+    align-self: flex-start;
+    background-color: #B6BBC1;
+    background-image: linear-gradient(#FFF, #B6BBC1);
+}
+
+.rollItem2,
+.rollItem4 {
+    flex: 3;
+}
+
+.rollItem1 .rollerItemContentBox,
+.rollItem2 .rollerItemContentBox,
+.rollItem4 .rollerItemContentBox,
+.rollItem5 .rollerItemContentBox {
+    display: none;
+}
+.rollerItemContentBox h2{
+    color: #027d02;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+}
+.rollItem3 {
+    text-align: center;
+    /* border: 2px solid gray; */
+    border-radius: 5px 5px 50px 50px;
+    margin: 5px;
+    padding: 5px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.rollItem3 .rollerItemContentBox {
+    position: relative;
+    /* aspect-ratio: 1/1; */
+    padding: 0px 25px 20px 25px;
+}
+
+.prevRollerCarousel,
+.nextRollerCarousel {
+    position: absolute;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-size: 30px;
+    padding: 5px 15px;
+    background-color: rgba(107, 107, 110, 0.778);
+    border-radius: 50px;
+    top: 30%;
+    z-index: 1000;
+    cursor: pointer;
+} 
+
+.nextRollerCarousel {
+    right: -50%;
+}
+
+.prevRollerCarousel {
+    left: -50%;
+}
+
+.rollItem1 {
+    order: 1;
+    /* margin-bottom: 50px; */
+    /* margin-top: 100px; */
+}
+
+.rollItem2 {
+    order: 2;
+}
+
+.rollItem3 {
+    order: 3;
+}
+
+.rollItem4 {
+    order: 4;
+}
+
+.rollItem5 {
+    order: 5;
+}
+
+.fadeRollerAnimation {
+    animation: fadeRollerOut 2s;
+}
+
+@keyframes fadeRollerOut {
+    0% {
+        opacity: 0;
+        scale: .8;
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@media screen and (max-width:600px){
+    .rollItem1,
+    .rollItem2,
+    .rollItem4,
+    .rollItem5{
+        display: none;
+    }
+    .prevRollerCarousel {
+        left: 0;
+        top: 0;
+        transform: translateY(-100%);
+        border-radius: 0;
+        background-color: transparent;
+        }
+        
+    .nextRollerCarousel {
+        right: 0;
+        top: 0;
+        transform: translateY(-100%);
+        border-radius: 0;
+        background-color: transparent
+        }
+        
+    .rollerImageBox {
+        width: 100%;
+    }
+}
+
+/* Round carousel end */
+/* ------------------- */
+
+/* AOS start */
+.hideAnime {
+    opacity: 0;
+    transition: all 5s;
+}
+
+.showAnime {
+    opacity: 1;
+}
+
+/* AOS end */
